@@ -1,0 +1,71 @@
+Output:
+
++---------------------+-----------------------+---------------+---------------------+----------------------+---------------+
+| patient_name        | patient_email         | patient_phone | doctor_name         | doctor_email         | doctor_phone  |
++---------------------+-----------------------+---------------+---------------------+----------------------+---------------+
+| Mariya Golubenko    | mgolubenko@gmail.com  | +380987654321 | Oleksandr Zaskaleta | ozaskaleta@gmail.com | +380597643575 |
+| Denis Milevskiy     | dmilevskiy@gmail.com  | +380476546885 | Vita Zinchenko      | vzinchenko@gmail.com | +380447785368 |
+| Arseniy Filchenko   | afilchenko@gmail.com  | +380775689306 | Mariya Salatska     | msalatska@gmail.com  | +380668376547 |
+| Viktoriya Kondatyuk | vkondratyuk@gmail.com | +380503965368 | Oleksandr Zaskaleta | ozaskaleta@gmail.com | +380597643575 |
+| Denis Milevskiy     | dmilevskiy@gmail.com  | +380476546885 | Viktor Panchenko    | vpanchenko@gmail.com | +380508752671 |
+| Olena Yatsenko      | oyatsenko@gmail.com   | +380957638476 | Mariya Shustova     | mshustova@gmail.com  | +380679375468 |
++---------------------+-----------------------+---------------+---------------------+----------------------+---------------+
++----------------+------------+------------------+-----------+--------------+
+| appointment_id | patient_id | appointment_date | doctor_id | disease_name |
++----------------+------------+------------------+-----------+--------------+
+|              4 |          6 | 2021-07-19       |         3 | None         |
+|              6 |          4 | 2024-08-30       |         1 | None         |
++----------------+------------+------------------+-----------+--------------+
++------------+--------------------+--------------------+
+| patient_id | name               | total_appointments |
++------------+--------------------+--------------------+
+|          1 | Yaroslav Stovpoviy |                  0 |
++------------+--------------------+--------------------+
++---------+---------+----------------+----------------+--------------------------------------------+
+| bill_id | amount  | payment_method | description_id | description                                |
++---------+---------+----------------+----------------+--------------------------------------------+
+|       6 |  180.00 | Cash           |              1 | Initial heart examination and ECG          |
+|       5 | 3200.00 | Insurance      |              2 | Immunology consultation and blood test     |
+|       4 | 2800.00 | Online Payment |              3 | ECG monitoring and arrhythmia diagnosis    |
+|       3 | 1599.99 | Cash           |              4 | Routine check-up                           |
+|       2 | 1785.99 | Credit Card    |              5 | Mental health evaluation and mood tracking |
+|       1 |  899.00 | Insurance      |              6 | Routine check-up                           |
++---------+---------+----------------+----------------+--------------------------------------------+
++---------+----------------+---------+----------------+
+| bill_id | description_id | amount  | payment_method |
++---------+----------------+---------+----------------+
+|       1 |              6 |  899.00 | Insurance      |
+|       2 |              5 | 1785.99 | Credit Card    |
++---------+----------------+---------+----------------+
++---------------------+---------+
+| full_name           | role    |
++---------------------+---------+
+| Yaroslav Stovpoviy  | Patient |
+| Mariya Golubenko    | Patient |
+| Arseniy Filchenko   | Patient |
+| Olena Yatsenko      | Patient |
+| Denis Milevskiy     | Patient |
+| Viktoriya Kondatyuk | Patient |
+| Mariya Shustova     | Doctor  |
+| Viktor Panchenko    | Doctor  |
+| Oleksandr Zaskaleta | Doctor  |
+| Vita Zinchenko      | Doctor  |
+| Saveliy Muzichko    | Doctor  |
+| Mariya Salatska     | Doctor  |
++---------------------+---------+
++---------------+---------+
+| number        | role    |
++---------------+---------+
+| +380509387547 | Patient |
+| +380987654321 | Patient |
+| +380775689306 | Patient |
+| +380957638476 | Patient |
+| +380476546885 | Patient |
+| +380503965368 | Patient |
+| +380679375468 | Doctor  |
+| +380508752671 | Doctor  |
+| +380597643575 | Doctor  |
+| +380447785368 | Doctor  |
+| +380576532789 | Doctor  |
+| +380668376547 | Doctor  |
++---------------+---------+

@@ -1,0 +1,93 @@
+CREATE TABLE patients (
+    patient_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(40),
+    gender VARCHAR(20),
+    email VARCHAR(50),
+    phone_number VARCHAR(15)
+);
+
+CREATE TABLE doctors (
+    doctor_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50),
+    gender VARCHAR(20),
+    specialization VARCHAR(50),
+    email VARCHAR(50),
+    phone_number VARCHAR(15)
+);
+
+CREATE TABLE appointments (
+    appointment_id INT PRIMARY KEY AUTO_INCREMENT,
+    patient_id INT,
+    appointment_date DATE,
+    doctor_id INT,
+    disease_name VARCHAR(60),
+    FOREIGN KEY (patient_id) REFERENCES patients(patient_id),
+    FOREIGN KEY (doctor_id) REFERENCES doctors(doctor_id)
+);
+
+CREATE TABLE descriptions (
+    description_id INT PRIMARY KEY,
+    appointment_id INT,
+    description VARCHAR(100),
+    FOREIGN KEY (appointment_id) REFERENCES appointments(appointment_id)
+);
+
+CREATE TABLE bills (
+    bill_id INT PRIMARY KEY,
+    description_id INT,
+    amount DECIMAL(10, 2),
+    payment_method VARCHAR(20),
+    FOREIGN KEY (description_id) REFERENCES descriptions(description_id)
+);
+
+INSERT INTO patients (name, gender, email, phone_number) VALUES
+('Yaroslav Stovpoviy', 'Male', 'ystovpoviy@gmail.com', '+380509387547'),
+('Mariya Golubenko', 'Female', 'mgolubenko@gmail.com', '+380987654321'),
+('Arseniy Filchenko', 'Male', 'afilchenko@gmail.com', '+380775689306'),
+('Olena Yatsenko', 'Female', 'oyatsenko@gmail.com', '+380957638476'),
+('Denis Milevskiy', 'Male', 'dmilevskiy@gmail.com', '+380476546885'),
+('Viktoriya Kondatyuk', 'Female', 'vkondratyuk@gmail.com', '+380503965368');
+
+INSERT INTO doctors (name, gender, specialization, email, phone_number) VALUES
+('Mariya Shustova', 'Female', 'Gastroenterology', 'mshustova@gmail.com', '+380679375468'),
+('Viktor Panchenko', 'Male', 'Psychiatry', 'vpanchenko@gmail.com', '+380508752671'),
+('Oleksandr Zaskaleta', 'Male', 'Cardiology', 'ozaskaleta@gmail.com', '+380597643575'),
+('Vita Zinchenko', 'Female', 'Immunology', 'vzinchenko@gmail.com', '+380447785368'),
+('Saveliy Muzichko', 'Male', 'Pediatric', 'smuzichko@gmail.com', '+380576532789'),
+('Mariya Salatska', 'Female', 'Cardiology', 'msalatska@gmail.com', '+380668376547');
+
+INSERT INTO appointments(patient_id, appointment_date, doctor_id, disease_name) VALUES
+(2, '2023-04-22', 3, 'Congenital heart disease'),
+(5, '2025-02-16', 4, 'Immunodeficiency'),
+(3, '2022-06-17', 6, 'Arrhythmia'),
+(6, '2021-07-19', 3, 'None'),
+(5, '2024-08-18', 2, 'Bipolar disorder'),
+(4, '2024-08-30', 1, 'None');
+
+INSERT INTO descriptions(description_id, appointment_id, description) VALUES
+(1, 1, 'Initial heart examination and ECG'),
+(2, 5, 'Immunology consultation and blood test'),
+(3, 3, 'ECG monitoring and arrhythmia diagnosis'),
+(4, 6, 'Routine check-up'),
+(5, 5, 'Mental health evaluation and mood tracking'),
+(6, 4, 'Routine check-up');
+
+INSERT INTO bills (bill_id, description_id, amount, payment_method) VALUES
+(1, 6, 899.00, 'Insurance'),
+(2, 5, 1785.99, 'Credit Card'),
+(3, 4, 1599.99, 'Cash'),
+(4, 3, 2800.00, 'Online Payment'),
+(5, 2, 3200.00, 'Insurance'),
+(6, 1, 180.00, 'Cash');
+
+
+
+
+
+
+
+
+
+
+
+
